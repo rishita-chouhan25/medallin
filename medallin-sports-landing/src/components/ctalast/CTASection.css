@@ -1,0 +1,122 @@
+/* ==========================================
+   CTA SECTION - MATCHED TO NAVBAR THEME
+========================================== */
+.cta-section {
+  position: relative;
+  background: #050816; /* Same background as Navbar */
+  padding: 120px 20px;
+  overflow: hidden;
+  border-top: 1px solid rgba(63, 169, 220, 0.15);
+  border-bottom: 1px solid rgba(63, 169, 220, 0.15);
+}
+
+.cta-container {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #8dc63f; /* Navbar Lime Accent */
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.cta-tag::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: #8dc63f;
+}
+
+.cta-title {
+  color: #f8fafc;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.95;
+  font-weight: 900;
+  margin: 0 0 26px;
+  letter-spacing: -1px;
+}
+
+.cta-title span {
+  color: #3fa9dc; /* Navbar Cyan Accent */
+}
+
+.cta-text {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  color: #9fb0d6;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* MATCHED TO NAVBAR BUTTON STYLE */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc); /* EXACT NAVBAR BUTTON GRADIENT */
+  color: #050816; /* Dark text for contrast */
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 28px rgba(141, 198, 63, 0.35);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 36px rgba(63, 169, 220, 0.5);
+  opacity: 0.95;
+}
+
+/* THEME GLOW EFFECTS */
+.cta-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.glow-left {
+  background: #3fa9dc; /* Cyan Glow */
+  left: -120px;
+  top: -40px;
+}
+
+.glow-right {
+  background: #8dc63f; /* Lime Glow */
+  right: -140px;
+  bottom: -40px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 90px 20px;
+  }
+
+  .cta-title {
+    font-size: 56px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+}

@@ -43,22 +43,22 @@
 .glow-one{
     top:-180px;
     left:-140px;
-    background:#1758ff;
-    opacity:.35;
+    background:#3fa9dc;
+    opacity:.25;
 }
 
 .glow-two{
     right:-180px;
     top:160px;
-    background:#00b8ff;
-    opacity:.25;
+    background:#8dc63f;
+    opacity:.20;
 }
 
 .glow-three{
     bottom:-220px;
     left:40%;
-    background:#782bff;
-    opacity:.22;
+    background:#3fa9dc;
+    opacity:.18;
 }
 
 /* ==========================
@@ -94,7 +94,7 @@
     align-items:center;
     gap:14px;
 
-    color:#61ff67;
+    color:#8dc63f;
 
     font-size:13px;
     letter-spacing:4px;
@@ -108,7 +108,7 @@
     content:"";
     width:42px;
     height:2px;
-    background:#61ff67;
+    background:#8dc63f;
 }
 
 .program-title{
@@ -127,7 +127,7 @@
 }
 
 .program-title span{
-    color:#26c7ff;
+    color:#3fa9dc;
 }
 
 .program-desc{
@@ -185,11 +185,11 @@
 
     border-radius:50%;
 
-    background:#2de36d;
+    background:#8dc63f;
 
     box-shadow:
-    0 0 15px #2de36d,
-    0 0 30px #2de36d;
+    0 0 15px #8dc63f,
+    0 0 30px #8dc63f;
 }
 
 .program-card h4{
@@ -213,7 +213,7 @@
 }
 
 /* ==========================
-        BUTTON
+        BUTTON (UPDATED COLOR)
 ========================== */
 
 .program-btn{
@@ -230,19 +230,25 @@
 
     border-radius:60px;
 
-    color:#fff;
+    color:#050816;
 
     cursor:pointer;
 
-    font-size:17px;
+    font-size:16px;
 
-    font-weight:600;
+    font-weight:800;
+
+    letter-spacing:0.5px;
+
+    text-transform:uppercase;
 
     background:linear-gradient(
-    90deg,
-    #0b74ff,
-    #5d41ff
+    135deg,
+    #8dc63f,
+    #3fa9dc
     );
+
+    box-shadow: 0 0 25px rgba(141,198,63,.35);
 
     transition:.45s;
 }
@@ -285,7 +291,7 @@
     background:#091124;
 
     box-shadow:
-    0 0 80px rgba(0,160,255,.12);
+    0 0 80px rgba(63,169,220,.12);
 }
 
 .main-player img{
@@ -368,7 +374,7 @@
 
     border-radius:50%;
 
-    border:1px solid rgba(40,175,255,.18);
+    border:1px solid rgba(63,169,220,.18);
 }
 
 .second-ring{
@@ -392,11 +398,11 @@
 
     border-radius:50%;
 
-    background:#2ed0ff;
+    background:#3fa9dc;
 
     box-shadow:
-    0 0 20px #2ed0ff,
-    0 0 40px #2ed0ff;
+    0 0 20px #3fa9dc,
+    0 0 40px #3fa9dc;
 }
 
 .ball.one{
@@ -469,20 +475,20 @@
 
     0%{
         box-shadow:
-        0 0 40px rgba(0,183,255,.15);
+        0 0 40px rgba(63,169,220,.15);
     }
 
     50%{
 
         box-shadow:
-        0 0 80px rgba(0,183,255,.35);
+        0 0 80px rgba(63,169,220,.35);
 
     }
 
     100%{
 
         box-shadow:
-        0 0 40px rgba(0,183,255,.15);
+        0 0 40px rgba(63,169,220,.15);
 
     }
 
@@ -608,7 +614,7 @@
     scale(1.03);
 
     box-shadow:
-    0 0 100px rgba(0,183,255,.35);
+    0 0 100px rgba(63,169,220,.35);
 
 }
 
@@ -619,7 +625,7 @@
     scale(1.05);
 
     box-shadow:
-    0 25px 60px rgba(0,183,255,.25);
+    0 25px 60px rgba(63,169,220,.25);
 
 }
 
@@ -629,7 +635,7 @@
     translateX(12px);
 
     border-color:
-    rgba(0,183,255,.4);
+    rgba(141,198,63,.4);
 
     background:
     rgba(18,28,62,.8);
@@ -651,10 +657,12 @@
 .program-btn:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-5px) scale(1.02);
 
     box-shadow:
-    0 12px 40px rgba(0,120,255,.4);
+    0 12px 40px rgba(63,169,220,.5);
+
+    opacity:.95;
 
 }
 

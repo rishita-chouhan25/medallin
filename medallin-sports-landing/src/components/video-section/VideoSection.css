@@ -1,0 +1,288 @@
+/* ==========================================
+   MEDALLIN SPORTS - STORY & VIDEO SECTION
+   Prefix: ms-story- | ms-vid-
+========================================== */
+
+.ms-story-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background: #050816;
+  overflow: hidden;
+}
+
+.ms-story-bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 50%,
+    rgba(63, 169, 220, 0.12),
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.ms-story-wrapper {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================
+   LEFT TEXT CONTENT
+========================================== */
+.ms-story-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ms-story-badge {
+  color: #3fa9dc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ms-story-heading {
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.ms-story-heading span {
+  color: #ffffff;
+}
+
+.ms-story-paragraph {
+  color: #8a96b8;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 35px;
+}
+
+/* ACTION BUTTON */
+.ms-story-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border-radius: 60px;
+  border: none;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  color: #050816;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(141, 198, 63, 0.35);
+  transition: all 0.35s ease;
+}
+
+.ms-story-action-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 35px rgba(63, 169, 220, 0.5);
+}
+
+/* ==========================================
+   RIGHT VIDEO HOLDER
+========================================== */
+.ms-vid-card-holder {
+  position: relative;
+  width: 100%;
+}
+
+.ms-vid-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: #091124;
+}
+
+.ms-vid-bg-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ms-vid-shade-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.35);
+  transition: background 0.3s ease;
+}
+
+.ms-vid-card-holder:hover .ms-vid-shade-overlay {
+  background: rgba(5, 8, 22, 0.15);
+}
+
+/* ==========================================
+   PULSE PLAY BUTTON
+========================================== */
+.ms-vid-trigger-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.ms-vid-play-icon {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(63, 169, 220, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.ms-vid-trigger-btn:hover .ms-vid-play-icon {
+  transform: scale(1.12);
+}
+
+.ms-vid-pulse-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #3fa9dc;
+  pointer-events: none;
+  animation: msPulseExpand 2.2s infinite ease-out;
+}
+
+.ms-vid-pulse-circle.ms-circle-2 {
+  animation-delay: 0.8s;
+  border-color: #8dc63f;
+}
+
+@keyframes msPulseExpand {
+  0% {
+    width: 75px;
+    height: 75px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
+
+/* ==========================================
+   NEON WAVE GLOW
+========================================== */
+.ms-vid-neon-wave {
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid #8dc63f;
+  filter: drop-shadow(0 0 15px #8dc63f);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+  animation: msWaveGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes msWaveGlow {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    border-color: #8dc63f;
+    filter: drop-shadow(0 0 10px #8dc63f);
+  }
+  100% {
+    transform: scale(1.1) rotate(15deg);
+    border-color: #3fa9dc;
+    filter: drop-shadow(0 0 25px #3fa9dc);
+  }
+}
+
+/* ==========================================
+   MODAL POPUP
+========================================== */
+.ms-vid-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ms-vid-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(63, 169, 220, 0.4);
+}
+
+.ms-vid-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.ms-vid-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ms-vid-player-full {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .ms-story-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

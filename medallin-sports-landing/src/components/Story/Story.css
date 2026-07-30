@@ -1,6 +1,4 @@
-/* ==========================
-        STORY SECTION
-========================== */
+/* 
 
 .story-section{
     position:relative;
@@ -10,7 +8,7 @@
     overflow:hidden;
 }
 
-/* Background */
+
 
 .story-section::before{
     content:"";
@@ -25,7 +23,7 @@
     pointer-events:none;
 }
 
-/* Glow */
+
 
 .story-glow{
     position:absolute;
@@ -49,7 +47,7 @@
     background:#00d4ff;
 }
 
-/* Container */
+
 
 .story-container{
     position:relative;
@@ -61,9 +59,7 @@
     margin:auto;
 }
 
-/* ==========================
-        TOP
-========================== */
+
 
 .story-top{
 
@@ -76,7 +72,7 @@
 
 }
 
-/* LEFT */
+
 
 .story-left{
 
@@ -142,17 +138,7 @@
 
 }
 
-/* RIGHT */
 
-/* .story-right{
-
-    display:flex;
-    align-items:flex-end;
-    padding-top:120px;
-    position:relative;
-    z-index:2;
-
-} */
  .story-right{
     position:relative;
     display:flex;
@@ -168,23 +154,7 @@
     opacity:.95;
 }
 
-/* Extra glow */
 
-/* .story-right::after{
-    content:"";
-    position:absolute;
-    inset:0;
- background:
-    radial-gradient(circle at 70% 50%,
-    rgba(0, 162, 255, 0.347),
-    transparent 60%);
-    background:
-    radial-gradient(circle at 70% 50%,
-    rgba(0, 162, 255, 0.347),
-    transparent 60%);
-
-    pointer-events:none;
-} */
 
 .story-left p{
 
@@ -195,9 +165,7 @@
     margin-top:20px;
 
 }
-/* ==========================
-        CARDS GRID
-========================== */
+
 
 .story-grid{
 
@@ -222,9 +190,7 @@
 
 }
 
-/* ==========================
-        CARD
-========================== */
+
 
 .story-card{
 
@@ -250,7 +216,7 @@
 
 }
 
-/* top glow */
+
 
 .story-card::before{
 
@@ -281,7 +247,7 @@
 
 }
 
-/* shine */
+
 
 .story-card::after{
 
@@ -305,7 +271,6 @@
 
 }
 
-/* Hover */
 
 .story-card:hover{
 
@@ -327,9 +292,6 @@
 
 }
 
-/* ==========================
-      SMALL TITLE
-========================== */
 
 .card-small{
 
@@ -349,9 +311,7 @@
 
 }
 
-/* ==========================
-      CARD HEADING
-========================== */
+
 
 .story-card h3{
 
@@ -369,9 +329,7 @@
 
 }
 
-/* ==========================
-      DESCRIPTION
-========================== */
+
 
 .story-card p{
 
@@ -383,9 +341,6 @@
 
 }
 
-/* ==========================
-      RESPONSIVE
-========================== */
 
 @media(max-width:1200px){
 
@@ -454,4 +409,352 @@ border-bottom:none;
 
 }
 
+} */
+ /* ==========================
+    STORY SECTION BASE
+========================== */
+.story-section {
+  position: relative;
+  width: 100%;
+  padding: 130px 0 100px;
+  background: #050816;
+  overflow: hidden;
+}
+
+.story-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 183, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(141, 198, 63, 0.08), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(120, 0, 255, 0.08), transparent 35%);
+  pointer-events: none;
+}
+
+.story-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(180px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.glow-left {
+  left: -200px;
+  top: 50px;
+  background: #00b7ff;
+}
+
+.glow-right {
+  right: -200px;
+  bottom: -50px;
+  background: #8dc63f;
+}
+
+.story-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1450px;
+  margin: auto;
+}
+
+/* ==========================
+    TOP HEADER & LAYOUT
+========================== */
+.story-top {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.story-tag {
+  color: #8dc63f;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: rgba(141, 198, 63, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(141, 198, 63, 0.25);
+}
+
+.story-title {
+  font-size: clamp(38px, 3.8vw, 56px);
+  line-height: 1.05;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1.5px;
+}
+
+.story-title span {
+  color: #00b7ff;
+}
+
+.story-left p {
+  color: #9da8c8;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin-top: 22px;
+}
+
+/* Stats Row */
+.story-stats {
+  display: flex;
+  gap: 35px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-item h4 {
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.stat-item span {
+  font-size: 12px;
+  color: #6c789d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Dynamic Image Display Right */
+.story-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.image-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.3; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.image-overlay-info {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(5, 8, 22, 0.95), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-badge {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #00b7ff;
+  font-weight: 700;
+}
+
+.image-overlay-info h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ==========================
+    INTERACTIVE CARDS GRID
+========================== */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(8, 14, 34, 0.45);
+  backdrop-filter: blur(20px);
+}
+
+.story-card {
+  position: relative;
+  padding: 36px 28px;
+  min-height: 340px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story-card:last-child {
+  border-right: none;
+}
+
+/* Active State Top Border Glow */
+.story-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00b7ff, #8dc63f);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.story-card.active::before,
+.story-card:hover::before {
+  transform: scaleX(1);
+}
+
+.story-card.active,
+.story-card:hover {
+  background: rgba(20, 32, 70, 0.75);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-small {
+  color: #00b7ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-icon {
+  color: #8891a3;
+  transition: color 0.3s ease;
+}
+
+.story-card.active .card-icon,
+.story-card:hover .card-icon {
+  color: #8dc63f;
+}
+
+.story-card h3 {
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.story-card p {
+  color: #8a96b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Capability Pills */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tag-pill {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #a0aec0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Card Action Button */
+.card-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #00b7ff;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover .card-action {
+  transform: translateX(4px);
+  color: #8dc63f;
+}
+
+/* ==========================
+    RESPONSIVE DESIGN
+========================== */
+@media (max-width: 1200px) {
+  .story-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .story-card:nth-child(1),
+  .story-card:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 650px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .story-stats {
+    flex-wrap: wrap;
+  }
 }
