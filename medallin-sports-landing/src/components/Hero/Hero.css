@@ -79,7 +79,13 @@ height:560px;
 
   backdrop-filter:blur(22px);
 
-  background:rgba(15,18,40,.35);
+ background:linear-gradient(
+180deg,
+rgba(18,26,55,.18),
+rgba(9,13,32,.92)
+);
+
+backdrop-filter:blur(24px);
 
   transition:.45s;
 
@@ -120,17 +126,26 @@ box-shadow:
 /* IMAGE */
 
 .hero-card img{
+    width:100%;
+    height:285px;
+    object-fit:cover;
+    display:block;
+    object-position:top;
+    border-radius:32px 32px 0 0;
 
-width:100%;
+    mask-image:linear-gradient(
+        to bottom,
+        black 65%,
+        transparent 100%
+    );
 
-height:250px;
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        black 65%,
+        transparent 100%
+    );
 
-object-fit:contain;
-
-padding:18px;
-
-background:#071222;
-
+    transform:scale(1.05);
 }
 
 /* CONTENT */
@@ -151,26 +166,26 @@ height:calc(100% - 250px);
 
 .card-content h2{
 
-font-size:34px;
+font-size:28px;
 
 line-height:1.15;
 
 margin-top:15px;
 
-font-weight:700;
+font-weight:600;
 
 }
 .card-content p{
 
-margin-top:18px;
+margin:18px 0;
 
 color:#b6bfd8;
 
 font-size:18px;
 
-line-height:1.7;
+line-height:1.4;
 
-flex:1;
+
 
 }
 .card-content button{

@@ -36,9 +36,9 @@ export default function Hero() {
 
           <div className="card-content">
 
-            <div className="icon">
+            {/* <div className="icon">
               🏏
-            </div>
+            </div> */}
 
             <h2>Elite Coaching</h2>
 
@@ -122,11 +122,11 @@ export default function Hero() {
 
           <div className="card-content">
 
-            <div className="icon green">
+            {/* <div className="icon green">
 
               🏑
 
-            </div>
+            </div> */}
 
             <h2>
 
