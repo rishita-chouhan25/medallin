@@ -158,6 +158,8 @@
 // }
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
+import travel from "../../assets/travel.jpeg";
+import worldcup from "../../assets/worldcup.jpeg";
 import { ArrowRight, Play, Trophy, Ticket, Users, Sparkles } from "lucide-react";
 
 // Left Card Data: Sports & Talent Management
@@ -187,7 +189,7 @@ const rightCardData = [
   {
     title: "T20 World Cup 2026",
     desc: "Official ICC Travel Agent offering match tickets bundled with travel & tours.",
-    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800&auto=format&fit=crop",
+    image: worldcup,
     tag: "FLAGSHIP CAMPAIGN"
   },
   {
@@ -199,7 +201,7 @@ const rightCardData = [
   {
     title: "Mega Sports Events",
     desc: "Seamless ticketing & tour packages for FIFA, Wimbledon, and Formula One.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop",
+    image: travel,
     tag: "GLOBAL EVENTS"
   }
 ];
@@ -240,7 +242,7 @@ export default function Hero() {
         playsInline
         className="hero-video"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero-20sec.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
