@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Story from "../Story/Story";
-// import Stats from "../components/Stats/Stats";
+import Stats from "../Stats/Stats";
 // import Programs from "../components/Programs/Programs";
 // import Facilities from "../components/Facilities/Facilities";
 // import CTA from "../components/CTA/CTA";
@@ -13,8 +13,8 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Story />
-      {/* <Stats />
-      <Programs />
+      <Stats />
+      {/* <Programs />
       <Facilities />
       <CTA />
       <Footer /> */}
