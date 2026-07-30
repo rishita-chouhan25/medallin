@@ -1,0 +1,203 @@
+/* ==========================================
+   NEW UNIQUE CLASS NAMES (RUN BANNER)
+========================================== */
+.run-banner {
+  position: relative;
+  width: 100%;
+  padding: 55px 0;
+  background: #050816;
+  border-top: 1px solid rgba(63, 169, 220, 0.2);
+  border-bottom: 1px solid rgba(63, 169, 220, 0.2);
+  overflow: hidden;
+}
+
+.run-banner-glow-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(63, 169, 220, 0.18),
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.run-banner-speed-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(63, 169, 220, 0.03) 0px,
+    rgba(63, 169, 220, 0.03) 2px,
+    transparent 2px,
+    transparent 80px
+  );
+  pointer-events: none;
+}
+
+.run-banner-container {
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 30px;
+}
+
+/* ==========================================
+   CHARACTER & RUNNING WIND LINES
+========================================== */
+.run-banner-runner-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* IMAGE STYLING WITH TRANSPARENCY BLEND */
+.run-banner-runner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen; /* Background grid/black hide karne ke liye */
+  filter: drop-shadow(0 0 15px rgba(63, 169, 220, 0.8));
+  transition: transform 0.3s ease;
+}
+
+/* RUNNING WIND LINES */
+.run-banner-wind {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(63, 169, 220, 0.85), transparent);
+  border-radius: 2px;
+  filter: drop-shadow(0 0 5px #3fa9dc);
+}
+
+.run-banner-wind.streak-1 { top: 15%; left: -60px; width: 75px; }
+.run-banner-wind.streak-2 { top: 38%; left: -95px; width: 110px; }
+.run-banner-wind.streak-3 { top: 62%; left: -80px; width: 90px; }
+.run-banner-wind.streak-4 { top: 82%; left: -45px; width: 55px; }
+
+.run-banner-light-trail {
+  position: absolute;
+  top: 10%;
+  left: -40px;
+  width: 80px;
+  height: 80%;
+  background: linear-gradient(90deg, transparent, rgba(63, 169, 220, 0.45));
+  filter: blur(14px);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.run-banner:hover .run-banner-runner-img {
+  animation: hoverRunnerDash 0.7s infinite alternate ease-in-out;
+}
+
+.run-banner:hover .run-banner-wind {
+  animation: windPulse 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes hoverRunnerDash {
+  0% {
+    transform: translateX(-6px) scale(1);
+  }
+  100% {
+    transform: translateX(16px) scale(1.03);
+  }
+}
+
+@keyframes windPulse {
+  0% {
+    opacity: 0.4;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1.3);
+  }
+}
+
+/* ==========================================
+   CONTENT & BUTTON
+========================================== */
+.run-banner-content {
+  flex: 1;
+}
+
+.run-banner-tag {
+  color: #8dc63f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.run-banner-title {
+  color: #ffffff;
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.run-banner-title span {
+  color: #3fa9dc;
+}
+
+.run-banner-desc {
+  color: #8a96b8;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.run-banner-action {
+  flex-shrink: 0;
+}
+
+.run-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  color: #050816;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(141, 198, 63, 0.35);
+  transition: all 0.3s ease;
+}
+
+.run-banner-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(63, 169, 220, 0.55);
+}
+
+.run-banner-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.run-banner-btn:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+  .run-banner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
