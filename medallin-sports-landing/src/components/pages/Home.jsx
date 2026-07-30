@@ -1,6 +1,6 @@
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
-// import Story from "../components/Story/Story";
+import Story from "../Story/Story";
 // import Stats from "../components/Stats/Stats";
 // import Programs from "../components/Programs/Programs";
 // import Facilities from "../components/Facilities/Facilities";
@@ -12,8 +12,8 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      {/* <Story />
-      <Stats />
+      <Story />
+      {/* <Stats />
       <Programs />
       <Facilities />
       <CTA />
