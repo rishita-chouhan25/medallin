@@ -1,164 +1,8 @@
-// import "./Hero.css";
-// import { ArrowRight, Play } from "lucide-react";
-
-// export default function Hero() {
-//   return (
-//     <section className="hero">
-
-//       {/* Background Video */}
-
-//       <video
-//         autoPlay
-//         muted
-//         loop
-//         playsInline
-//         className="hero-video"
-//       >
-//         <source src="/hero.mp4" type="video/mp4" />
-//       </video>
-
-//       {/* Overlay */}
-
-//       <div className="overlay"></div>
-
-//       {/* Content */}
-
-//       <div className="hero-container">
-
-//         {/* LEFT */}
-
-//         <div className="hero-card left-card">
-
-//           <img
-//             src="/src/assets/left.png"
-//             alt=""
-//           />
-
-//           <div className="card-content">
-
-//             {/* <div className="icon">
-//               🏏
-//             </div> */}
-
-//             <h2>Elite Coaching</h2>
-
-//             <p>
-
-//               Expert mentors and personalized training programs to unlock your highest potential.
-
-//             </p>
-
-//             <button>
-
-//               Explore More
-
-//             </button>
-
-//           </div>
-
-//         </div>
-
-//         {/* CENTER */}
-
-//         <div className="hero-center">
-
-//           <span className="tag">
-
-//             TRAIN • COMPETE • EXCEL
-
-//           </span>
-
-//           <h1>
-
-//             Excellence On & Off
-
-//             <br />
-
-//             <span>
-
-//               The Field
-
-//             </span>
-
-//           </h1>
-
-//           <p>
-
-//             Empowering athletes through world-class coaching,
-//             elite sports infrastructure and international exposure.
-
-//           </p>
-
-//           <div className="hero-buttons">
-
-//             <button className="primary">
-
-//               Explore Programs
-
-//               <ArrowRight size={18}/>
-
-//             </button>
-
-//             <button className="secondary">
-
-//               <Play size={18}/>
-
-//               Watch Video
-
-//             </button>
-
-//           </div>
-
-//         </div>
-
-//         {/* RIGHT */}
-
-//         <div className="hero-card right-card">
-
-//           <img
-//             src="/src/assets/right.png"
-//             alt=""
-//           />
-
-//           <div className="card-content">
-
-//             {/* <div className="icon green">
-
-//               🏑
-
-//             </div> */}
-
-//             <h2>
-
-//               World-Class Facilities
-
-//             </h2>
-
-//             <p>
-
-//               Modern infrastructure,
-//               performance analysis and recovery facilities.
-
-//             </p>
-
-//             <button>
-
-//               Explore More
-
-//             </button>
-
-//           </div>
-
-//         </div>
-
-//       </div>
-
-//     </section>
-//   );
-// }
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
-import { ArrowRight, Play, Trophy, Ticket, Users, Sparkles } from "lucide-react";
+import travel from "../../assets/travel.jpeg";
+import worldcup from "../../assets/worldcup.jpeg";
+import { ArrowRight, Play, Ticket, Users } from "lucide-react";
 
 // Left Card Data: Sports & Talent Management
 const leftCardData = [
@@ -187,7 +31,7 @@ const rightCardData = [
   {
     title: "T20 World Cup 2026",
     desc: "Official ICC Travel Agent offering match tickets bundled with travel & tours.",
-    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800&auto=format&fit=crop",
+    image: worldcup,
     tag: "FLAGSHIP CAMPAIGN"
   },
   {
@@ -199,7 +43,7 @@ const rightCardData = [
   {
     title: "Mega Sports Events",
     desc: "Seamless ticketing & tour packages for FIFA, Wimbledon, and Formula One.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop",
+    image: travel,
     tag: "GLOBAL EVENTS"
   }
 ];
@@ -207,22 +51,13 @@ const rightCardData = [
 export default function Hero() {
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(0);
-  const [animateLeft, setAnimateLeft] = useState(false);
-  const [animateRight, setAnimateRight] = useState(false);
 
-  // Auto-switch card content every 4 seconds with smooth animation
+  // Auto-switch card content every 4.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimateLeft(true);
-      setAnimateRight(true);
-
-      setTimeout(() => {
-        setLeftIndex((prev) => (prev + 1) % leftCardData.length);
-        setRightIndex((prev) => (prev + 1) % rightCardData.length);
-        setAnimateLeft(false);
-        setAnimateRight(false);
-      }, 300); // sync with CSS transition delay
-    }, 4000);
+      setLeftIndex((prev) => (prev + 1) % leftCardData.length);
+      setRightIndex((prev) => (prev + 1) % rightCardData.length);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, []);
@@ -240,7 +75,7 @@ export default function Hero() {
         playsInline
         className="hero-video"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero-20sec.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
@@ -250,10 +85,20 @@ export default function Hero() {
       <div className="hero-container">
 
         {/* LEFT CARD - Athlete & Talent Focus */}
-        <div className={`hero-card left-card ${animateLeft ? "fade-out" : "fade-in"}`}>
-          <img src={currentLeft.image} alt={currentLeft.title} />
+        <div className="hero-card left-card">
+          {/* Stacked Images for Smooth Cross-Fade */}
+          <div className="card-img-wrapper">
+            {leftCardData.map((item, index) => (
+              <img
+                key={index}
+                src={item.image}
+                alt={item.title}
+                className={`card-img ${index === leftIndex ? "active" : ""}`}
+              />
+            ))}
+          </div>
           
-          <div className="card-content">
+          <div key={leftIndex} className="card-content text-fade-in">
             <span className="card-badge left-badge">
               <Users size={12} /> {currentLeft.tag}
             </span>
@@ -298,10 +143,20 @@ export default function Hero() {
         </div>
 
         {/* RIGHT CARD - Events & Hospitality Focus */}
-        <div className={`hero-card right-card ${animateRight ? "fade-out" : "fade-in"}`}>
-          <img src={currentRight.image} alt={currentRight.title} />
+        <div className="hero-card right-card">
+          {/* Stacked Images for Smooth Cross-Fade */}
+          <div className="card-img-wrapper">
+            {rightCardData.map((item, index) => (
+              <img
+                key={index}
+                src={item.image}
+                alt={item.title}
+                className={`card-img ${index === rightIndex ? "active" : ""}`}
+              />
+            ))}
+          </div>
 
-          <div className="card-content">
+          <div key={rightIndex} className="card-content text-fade-in">
             <span className="card-badge right-badge">
               <Ticket size={12} /> {currentRight.tag}
             </span>

@@ -14,7 +14,7 @@
   height: 100%;
   object-fit: cover;
   transform: scale(1.08);
-  filter: brightness(0.8) contrast(1.1) saturate(1.2);
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
 }
 
 /* ================= OVERLAY ================= */
@@ -52,22 +52,15 @@
   gap: 50px;
 }
 
-/* ================= CARDS & ANIMATION ================= */
+/* ================= CARDS & SMOOTH ANIMATION ================= */
 .hero-card {
   height: 520px;
   border-radius: 28px;
   overflow: hidden;
-  /* YAHAN SE CHANGE KIYA HAI */
-  background: rgba(255, 255, 255, 0.03); /* Bilkul halke glass look ke liye */
-  backdrop-filter: blur(12px); /* Blur kam kiya taaki peeche ka dikhe */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  /* backdrop-filter: blur(20px);
-  background: linear-gradient(
-    180deg,
-    rgba(24, 33, 64, 0.45),
-    rgba(13, 18, 32, 0.95)
-  ); */
-  transition: transform 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   position: relative;
 }
 
@@ -75,48 +68,71 @@
   transform: translateY(-8px);
 }
 
-/* Smooth content transition styles */
-.hero-card.fade-out {
-  opacity: 0.2;
-  transform: scale(0.97);
-}
-
-.hero-card.fade-in {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Left Card (Sky Theme) */
+/* Left Card Theme */
 .left-card {
   border: 1px solid rgba(63, 169, 220, 0.35);
   box-shadow: 0 0 30px rgba(63, 169, 220, 0.15);
 }
 
-/* Right Card (Lime Theme) */
+/* Right Card Theme */
 .right-card {
   border: 1px solid rgba(141, 198, 63, 0.35);
   box-shadow: 0 0 30px rgba(141, 198, 63, 0.15);
 }
 
-/* Card Images */
-.hero-card img {
+/* ================= STACKED IMAGE CROSS-FADE ================= */
+.card-img-wrapper {
+  position: relative;
   width: 100%;
   height: 240px;
-  object-fit: cover;
-  display: block;
-  object-position: top;
+  overflow: hidden;
   border-radius: 26px 26px 0 0;
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-/* Card Inner Content */
+.card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transform: scale(1.1);
+  /* Smooth 1 second transition for opacity & scale */
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.card-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================= TEXT ANIMATION ================= */
 .card-content {
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100% - 240px);
+}
+
+.text-fade-in {
+  animation: smoothTextIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card-badge {
@@ -274,6 +290,6 @@
   }
 
   .hero-card {
-    display: none; /* Hide side cards on smaller screens for cleaner hero look */
+    display: none;
   }
 }

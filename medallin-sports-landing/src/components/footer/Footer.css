@@ -1,0 +1,301 @@
+/* ==========================================
+   FOOTER - MATCHED TO NAVBAR BUTTON THEME
+========================================== */
+.footer {
+  background: #050816;
+  color: #d8e4ff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-line {
+  height: 2px;
+  background: linear-gradient(90deg, #3fa9dc, #8dc63f, #3fa9dc);
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(141, 198, 63, 0.5);
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 24px 18px;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr 1fr 1fr;
+  gap: 42px;
+}
+
+/* ==========================================
+   BRAND & LOGO
+========================================== */
+.footer-brand {
+  padding-right: 18px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.footer-logo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #050816;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 0 0 20px rgba(141, 198, 63, 0.35);
+}
+
+.logo-text h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo-text span {
+  color: #8dc63f;
+  font-size: 9px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+}
+
+.footer-brand p {
+  color: #9eb0d9;
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #3fa9dc;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(63, 169, 220, 0.25);
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #050816;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  border-color: transparent;
+  box-shadow: 0 0 16px rgba(141, 198, 63, 0.5);
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   LINKS & CONTACT
+========================================== */
+.footer-links h4 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+.footer-links a {
+  display: block;
+  color: #9eb0d9;
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #8dc63f;
+  transform: translateX(3px);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #9eb0d9;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.footer-contact-item svg {
+  color: #3fa9dc;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   NEWSLETTER BOX & BUTTON
+========================================== */
+.newsletter-text {
+  color: #9eb0d9;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.newsletter-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(63, 169, 220, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-box:focus-within {
+  border-color: #8dc63f;
+  box-shadow: 0 0 12px rgba(141, 198, 63, 0.25);
+}
+
+.newsletter-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 12px 14px;
+  outline: none;
+  font-size: 14px;
+}
+
+.newsletter-box input::placeholder {
+  color: #7f92c4;
+}
+
+/* MATCHED TO NAVBAR BUTTON GRADIENT */
+.newsletter-box button {
+  width: 48px;
+  height: 44px;
+  border: none;
+  cursor: pointer;
+  color: #050816;
+  background: linear-gradient(135deg, #8dc63f, #3fa9dc);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-box button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* ==========================================
+   FOOTER BOTTOM & SCROLL TOP
+========================================== */
+.footer-bottom {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: #7f92c4;
+  font-size: 13px;
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-bottom-links a {
+  color: #7f92c4;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #3fa9dc;
+}
+
+.scroll-top-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(63, 169, 220, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #3fa9dc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background: #8dc63f;
+  color: #050816;
+  box-shadow: 0 0 18px rgba(141, 198, 63, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scroll-top-btn {
+    right: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 36px 18px 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-box {
+    width: 100%;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
