@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import travel from "../../assets/travel.jpeg";
 import worldcup from "../../assets/worldcup.jpeg";
+import global from "../../assets/global.jpg"
+import brands from "../../assets/brands.png"
 import { ArrowRight, Play, Ticket, Users } from "lucide-react";
 
 // Left Card Data: Sports & Talent Management
@@ -15,13 +17,13 @@ const leftCardData = [
   {
     title: "Brand Endorsements",
     desc: "Connecting iconic athletes like Ravindra Jadeja & Manu Bhaker with top brands.",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop",
+    image: brands,
     tag: "SPONSORSHIP"
   },
   {
     title: "Global Exposure",
     desc: "Strategic social media management and media representation worldwide.",
-    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=800&auto=format&fit=crop",
+    image: global,
     tag: "PR & MEDIA"
   }
 ];
@@ -75,7 +77,7 @@ export default function Hero() {
         playsInline
         className="hero-video"
       >
-        <source src="/hero-20sec.mp4" type="video/mp4" />
+        <source src="/hero-20seco.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
