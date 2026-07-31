@@ -1,12 +1,13 @@
 import "./Programs.css";
 import { ArrowRight } from "lucide-react";
+import sports1 from "../../assets/sports3.jpg";
 
 // Updated Roster Data with your specific athletes & images
 const athletes = [
   {
     name: "RAVINDRA JADEJA",
     sport: "Cricket",
-    image: "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: sports1,
   },
   {
     name: "MANU BHAKER",
