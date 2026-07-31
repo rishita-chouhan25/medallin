@@ -7,6 +7,8 @@ import CallToAction from "../cta/CallToAction";
 import Footer from "../footer/Footer";
 import CTASection from "../ctalast/CTASection";
 import VideoSection from "../video-section/VideoSection";
+import LiveTicker from "../liveticker/LiveTicker";
+import WC2026Spotlight from "../spotlight/WC2026Spotlight";
 // import Facilities from "../components/Facilities/Facilities";
 // import CTA from "../components/CTA/CTA";
 // import Footer from "../components/Footer/Footer";
@@ -16,6 +18,8 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
+      <LiveTicker />
+      <WC2026Spotlight />
       <Story />
       <VideoSection />
       <Stats />

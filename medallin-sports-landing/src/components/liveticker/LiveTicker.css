@@ -1,0 +1,196 @@
+/* ================= MAIN WRAPPER ================= */
+.ticker-wrapper {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  background: rgba(8, 12, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* ================= FIXED LEFT TAG ================= */
+.ticker-header-tag {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #8dc63f 0%, #3fa9dc 100%);
+  color: #0d1220;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.sparkle-icon {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= MARQUEE CONTAINER ================= */
+.ticker-track-container {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  /* Left & Right Fade/Glow Gradient Effect */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+}
+
+/* Continuous Moving Track */
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  white-space: nowrap;
+  will-change: transform;
+  /* Adjust duration (30s) if you want it faster or slower */
+  animation: tickerMarquee 30s linear infinite;
+}
+
+/* User jab ticker par hover karega toh animation pause ho jayegi */
+.ticker-wrapper:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================= TICKER ITEM STYLES ================= */
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ticker-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(63, 169, 220, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Badge styling inside ticker */
+.ticker-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Types Variation */
+.ticker-item.live .ticker-badge {
+  background: rgba(255, 59, 48, 0.15);
+  color: #ff453a;
+  border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.ticker-item.upcoming .ticker-badge {
+  background: rgba(141, 198, 63, 0.15);
+  color: #8dc63f;
+  border: 1px solid rgba(141, 198, 63, 0.3);
+}
+
+.ticker-item.stat .ticker-badge,
+.ticker-item.roster .ticker-badge,
+.ticker-item.event .ticker-badge {
+  background: rgba(63, 169, 220, 0.15);
+  color: #3fa9dc;
+  border: 1px solid rgba(63, 169, 220, 0.3);
+}
+
+/* Pulsing Red Dot for Live Items */
+.live-pulse {
+  animation: pulseGlow 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+}
+
+.ticker-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ticker-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 10px;
+}
+
+.ticker-desc {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .ticker-header-tag {
+    padding: 0 14px;
+    font-size: 9px;
+  }
+  
+  .ticker-header-tag span {
+    display: none; /* Hide text on small screen, keep icon */
+  }
+  
+  .ticker-track {
+    gap: 24px;
+  }
+}
